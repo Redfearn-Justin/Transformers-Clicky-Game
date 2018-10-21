@@ -12,16 +12,19 @@ const TransformerCard = props => (
                     <strong>Name:</strong> {props.name}
                 </li>
                 <li>
-                    <strong>Occupation:</strong> {props.occupation}
+                    <strong>Role:</strong> {props.role}
                 </li>
                 <li>
-                    <strong>Location:</strong> {props.location}
+                    <strong>Alt Mode:</strong> {props.altmode}
                 </li>
             </ul>
         </div>
         {/* won't need below code, most likely */}
+        {/* consider using this to control handle on click function */}
         <span onClick={() => props.removeFriend(props.id)} className="remove">
             𝘅
         </span>
     </div>
 );
+
+export default TransformerCard;
