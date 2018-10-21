@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Optimus Prime",
+        "image": "https://tfwiki.net/mediawiki/images2/3/37/Optimusg1.jpg",
+        "role": "Freedom Fighter",
+        "transforms into": "Truck",
+        "affiliation": "Autobot"
+    },
+    {
+        "id": 2,
+        "name": "Bumblebee",
+        "image": "https://tfwiki.net/mediawiki/images2/3/35/BumblebeeRIC.jpg",
+        "role": "Courageous Scout",
+        "transforms into": "Car",
+        "affiliation": "Autobot"
+    },
+    {
+        "id": 3,
+        "name": "Ironhide",
+        "image": "https://tfwiki.net/mediawiki/images2/2/25/Ironhideg1guido.jpg",
+        "role": "Veteran Warrior",
+        "transforms into": "Truck",
+        "affiliation": "Autobot"
+    },
+    {
+        "id": 4,
+        "name": "Red Alert",
+        "image": "https://tfwiki.net/mediawiki/images2/8/8b/G1_RedAlert_profileart1.jpg",
+        "role": "Security Chief",
+        "transforms into": "Car/Ambulance",
+        "affiliation": "Autobot"
+    },
+    {
+        "id": 5,
+        "name": "Jazz",
+        "image": "https://tfwiki.net/mediawiki/images2/f/f2/Jazz-g1-shout-dvds.jpg",
+        "role": "Special Ops",
+        "transforms into": "Car",
+        "affiliation": "Autobot"
+    },
+    {
+        "id": 6,
+        "name": "Prowl",
+        "image": "https://tfwiki.net/mediawiki/images2/1/13/Prowlg1.jpg",
+        "role": "Military Strategist",
+        "transforms into": "Car",
+        "affiliation": "Autobot"
+    },
+    {
+        "id": 7,
+        "name": "Megatron",
+        "image": "https://tfwiki.net/mediawiki/images2/9/99/Megatronguido.jpg",
+        "role": "Living Weapon",
+        "transforms into": "Tank",
+        "affiliation": "Decepticon"
+    },
+    {
+        "id": 8,
+        "name": "Starscream",
+        "image": "https://tfwiki.net/mediawiki/images2/7/79/Starscreamg1.jpg",
+        "role": "Scheming Second-in-Command",
+        "transforms into": "Airplane",
+        "affiliation": "Decepticon"
+    },
+    {
+        "id": 9,
+        "name": "Straxus",
+        "image": "https://tfwiki.net/mediawiki/images2/6/62/Straxus.jpg",
+        "role": "Ruthless Dictator",
+        "transforms into": "Tank",
+        "affiliation": "Decepticon"
+    },
+    {
+        "id": 10,
+        "name": "Demolisher",
+        "image": "https://tfwiki.net/mediawiki/images2/1/10/ArmDemolishorDWCalendar.jpg",
+        "role": "Devoted Warrior",
+        "transforms into": "Tank",
+        "affiliation": "Decepticon"
+    },
+    {
+        "id": 11,
+        "name": "Shockwave",
+        "image": "https://tfwiki.net/mediawiki/images2/3/3b/Cloud_Shockwave.jpg",
+        "role": "Cybertron Commander",
+        "transforms into": "Spaceship",
+        "affiliation": "Decepticon"
+    },
+    {
+        "id": 12,
+        "name": "Thundercracker",
+        "image": "https://tfwiki.net/mediawiki/images2/3/32/Thundercrackerg1guido.jpg",
+        "role": "Mach Warrior",
+        "transforms into": "Airplane",
+        "affiliation": "Decepticon"
+    }
+  ]
