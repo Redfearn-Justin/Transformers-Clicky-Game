@@ -20,19 +20,72 @@ class App extends Component {
   //   this.setState({ friends });
   // };
 
+
   clickCount = id => {
+
+    //variable to get filtered match
+    const matchTransformer = this.state.transformers.filter(match => match.id === id);
+
+    const matched = matchTransformer[0];
+
+    //=========================================
+
+
+
+    //if they haven't been selected before...
+
+    if(matched.timesClicked === 0) {
+
+      this.setState({ score: this.state.score + 1});
+
+      matched.timesClicked = 1;
+
+    } 
+
+    //if they have been already selected before
+    
+    else if(matched.timesClicked === 1) {
+
+      console.log("You've already clicked this one!! :( ");
+
+      this.setState({ score: 0 });
+
+      matched.timesClicked = 0;
+
+    }
+
+    // this.state.transformers.forEach(TransformersCard => {
+
+    //   if(TransformersCard.id === id) {
+
+    //     console.log(`matched the transformer! ${TransformersCard.name}`);
+
+    //   }
+    // });
+
+    //========================================================================
+
+
+    // high score check function
+
+    // if(this.state.score > this.state.highscore) {
+
+    //   this.setState({ highscore: this.state.score });
+
+    //   console.log("you've beaten the high score!!!");
+    // }
 
     //increase count functionality
 
-    this.setState({ score: this.state.score + 1});
+    // this.setState({ score: this.state.score + 1});
 
     //===================================================
 
     //randomize card functionality
 
-    this.state.transformers.sort(() => Math.random() - 0.5);
+    // this.state.transformers.sort(() => Math.random() - 0.5);
 
-    return true; 
+    // return true; 
 
     //=====================================================
 
