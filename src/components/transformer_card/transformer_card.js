@@ -2,7 +2,7 @@ import React from "react";
 import "./transformer_card.css";
 
 const TransformerCard = props => (
-    <div className="card">
+    <div className="card" onClick={() => props.clickCount(props.id)}>
         <div className="img-container">
             <img alt={props.name} src={props.image} />
         </div>
@@ -19,11 +19,6 @@ const TransformerCard = props => (
                 </li>
             </ul>
         </div>
-        {/* won't need below code, most likely */}
-        {/* consider using this to control handle on click function */}
-        <span onClick={() => props.removeFriend(props.id)} className="remove">
-            𝘅
-        </span>
     </div>
 );
 

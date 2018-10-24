@@ -8,7 +8,9 @@ import "./App.css";
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    transformers
+    transformers,
+    score: 0,
+    highscore: 0
   };
 
   // removeFriend = id => {
@@ -18,14 +20,36 @@ class App extends Component {
   //   this.setState({ friends });
   // };
 
+  clickCount = id => {
+
+    //increase count functionality
+
+    this.setState({ score: this.state.score + 1});
+
+    //===================================================
+
+    //randomize card functionality
+
+    this.state.transformers.sort(() => Math.random() - 0.5);
+
+    return true; 
+
+    //=====================================================
+
+
+  };
+
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
-        <Title>Battle For Cybertron</Title>
+        <Title score={this.state.score} highscore={this.state.highscore}>Battle For Cybertron</Title>
         {this.state.transformers.map(transformers => (
           <TransformersCard
-            removeFriend={this.removeFriend}
+            // removeFriend={this.removeFriend}
+            clickCount={this.clickCount}
+            //===============================
+            
             id={transformers.id}
             key={transformers.id}
             name={transformers.name}
