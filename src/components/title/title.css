@@ -4,6 +4,9 @@
   font-size: 3rem;
   color: #2A77AE;
   margin-bottom: 50px;
+  /* background: grey;
+  position: fixed;
+  z-index: 1; */
 }
 
 .pageTitle {
@@ -12,4 +15,5 @@
 
 .scores {
   text-align: right;
+  color: black;
 }

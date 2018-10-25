@@ -6,109 +6,80 @@ import transformers from "./transformers.json";
 import "./App.css";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+
   state = {
     transformers,
     score: 0,
     highscore: 0
   };
 
-  // removeFriend = id => {
-  //   // Filter this.state.friends for friends with an id not equal to the id being removed
-  //   const friends = this.state.friends.filter(friend => friend.id !== id);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ friends });
-  // };
+  highscoreCheck = () => {
+
+    if(this.state.score >= this.state.highscore) {
+
+      this.setState({ highscore: this.state.score + 1 });
+
+    }
+  }
 
 
   clickCount = id => {
 
-    //variable to get filtered match
-    const matchTransformer = this.state.transformers.filter(match => match.id === id);
+    //variables
 
-    const matched = matchTransformer[0];
+    const transformerArray = this.state.transformers;
 
-    //=========================================
+    const matchedTransformer = this.state.transformers.find(match => match.id === id);
 
+    //===========================
 
 
     //if they haven't been selected before...
 
-    if(matched.timesClicked === 0) {
+    if(matchedTransformer.notClicked) {
 
       this.setState({ score: this.state.score + 1});
 
-      matched.timesClicked = 1;
+      matchedTransformer.notClicked = false;
+
+      transformerArray.sort(() => Math.random() - 0.5);
+
+      this.highscoreCheck();
+
+      return true; 
 
     } 
 
     //if they have been already selected before
     
-    else if(matched.timesClicked === 1) {
+    else {
 
-      console.log("You've already clicked this one!! :( ");
+      alert("You've already clicked this one!! :( ... game is now resetting... ");
 
-      this.setState({ score: 0 });
+      this.setState({ score: 0, transformers });
 
-      matched.timesClicked = 0;
+      for (let i = 0; i < transformerArray.length; i++) {
 
+        //setting every Transformer's "notClicked" setting back to true
+
+        transformerArray[i].notClicked = true;
+
+      }
     }
-
-    // this.state.transformers.forEach(TransformersCard => {
-
-    //   if(TransformersCard.id === id) {
-
-    //     console.log(`matched the transformer! ${TransformersCard.name}`);
-
-    //   }
-    // });
-
-    //========================================================================
-
-
-    // high score check function
-
-    // if(this.state.score > this.state.highscore) {
-
-    //   this.setState({ highscore: this.state.score });
-
-    //   console.log("you've beaten the high score!!!");
-    // }
-
-    //increase count functionality
-
-    // this.setState({ score: this.state.score + 1});
-
-    //===================================================
-
-    //randomize card functionality
-
-    // this.state.transformers.sort(() => Math.random() - 0.5);
-
-    // return true; 
-
-    //=====================================================
-
-
   };
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
+  
   render() {
     return (
       <Wrapper>
         <Title score={this.state.score} highscore={this.state.highscore}>Battle For Cybertron</Title>
         {this.state.transformers.map(transformers => (
           <TransformersCard
-            // removeFriend={this.removeFriend}
             clickCount={this.clickCount}
-            //===============================
-            
             id={transformers.id}
             key={transformers.id}
             name={transformers.name}
             image={transformers.image}
-            role={transformers.role}
-            altmode={transformers.altmode}
             affiliation={transformers.affiliation}
           />
         ))}
